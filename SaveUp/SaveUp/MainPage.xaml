@@ -10,10 +10,10 @@
         <Label Text="Was ist SaveUp" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="Sich möchten für eine grössere private Investition (z.B. Ferien etc.) Geld sparen und haben sich aus diesem Grund für den Verzicht von üblichen kleinen Ausgaben wie z.B. Kaffee, Süssigkeiten etc.  entschieden. Alle gesparten Kleineinkäufe möchten Sie in einer App festhalten, sodass Sie sich laufend über den angesparten Geldbetrag informieren können" 
         FontSize="16" Padding="30,0,30,0"/>
-        <Button Text="{ Binding Budge} " CornerRadius="9" Margin="30" Command="{Binding ShowListCommand}">
+        <Button Text="{ Binding Budge} " CornerRadius="9" Margin="30" Command="{Binding AddListCommand}">
             
         </Button>
-        <Button Text="Artikel Hinzufügen" CornerRadius="9" Margin="30" Command="{Binding AddListCommand}">
+        <Button Text="Artikel Hinzufügen" CornerRadius="9" Margin="30" Command="{Binding ShowListCommand}">
             
         </Button>
     </StackLayout>

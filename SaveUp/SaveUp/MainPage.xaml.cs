@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SaveUp.View;
+using SaveUp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,44 +11,25 @@ using Xamarin.Forms;
 
 namespace SaveUp 
 {
-    public partial class MainPage : INotifyPropertyChanged 
+    public partial class MainPage : ContentPage
     {
         public MainPage()
         {
 
             InitializeComponent();
-            BindingContext = this;
-            ShowListCommand = new Command(ShowListCommand);
-
-
-           
+            BindingContext = new MainPageViewModel();
+     
 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        public Command ShowListCommand { get; }
 
-        public Command AddListCommand { get;  }
-        void INotifyPropertyChanged(int budge)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-        }
+      
+       
 
-        int budge = 101;
-        public string Budge
-        {
-            get { return $"Gesparte Summe beträgt: {budge} CHF"; }
-            
 
 
    
-        }
-
-       async void ShowList()
-        {
-            Show
-        }
     }
 
 
