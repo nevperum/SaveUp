@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveUp.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="Crimson" Padding="24" CornerRadius="0">
+            <Label Text="Willkommen zum Hauptmenu von SaveUp Applikation" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Label Text="Was ist SaveUp" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Sich möchten für eine grössere private Investition (z.B. Ferien etc.) Geld sparen und haben sich aus diesem Grund für den Verzicht von üblichen kleinen Ausgaben wie z.B. Kaffee, Süssigkeiten etc.  entschieden. Alle gesparten Kleineinkäufe möchten Sie in einer App festhalten, sodass Sie sich laufend über den angesparten Geldbetrag informieren können" 
+        FontSize="16" Padding="30,0,30,0"/>
+        <Button Text="{ Binding Budge} " CornerRadius="9" Margin="30" Command="{Binding ShowListCommand}">
+            
+        </Button>
+        <Button Text="Artikel Hinzufügen" CornerRadius="9" Margin="30" Command="{Binding AddListCommand}">
+            
+        </Button>
+    </StackLayout>
+
+</ContentPage>
+
