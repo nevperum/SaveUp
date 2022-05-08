@@ -9,11 +9,11 @@
                     <Label Text="Hier können Sie alle gesparten Artikel sehen" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                 </Frame>
             </StackLayout>
-            <StackLayout>
+           
                 <ListView 
+                    ItemsSource="{Binding EintragDaten}"
                      HasUnevenRows="True"
-                    SeparatorColor="Crimson"
-                    >
+                    SeparatorColor="Crimson">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -33,7 +33,11 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
+                <Button Text="Alle löschen!" Style="{StaticResource Buttons}"
+                Grid.Row="2"
+                BackgroundColor="Red"
+                Command="{Binding DeleteAll}"/>
+          
         </StackLayout>
         
     </ContentPage.Content>
