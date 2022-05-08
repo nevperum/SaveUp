@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveUp.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style x:Key="Frames" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Crimson"></Setter>
+                <Setter Property="Padding" Value="24"></Setter>
+                <Setter Property="Margin" Value="5"></Setter>
+                <Setter Property="CornerRadius" Value="25"></Setter>
+            </Style>
+            <Style x:Key="Buttons" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Crimson"></Setter>
+                <Setter Property="Margin" Value="25"></Setter>
+                <Setter Property="CornerRadius" Value="9"></Setter>
+            </Style>
+            <Style x:Key="Labels" TargetType="Label">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

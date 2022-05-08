@@ -4,9 +4,38 @@
              x:Class="SaveUp.View.ShowPageView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xadnbdbnerbnebmarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Frame Style="{StaticResource Frames}" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Text="Hier können Sie alle gesparten Artikel sehen" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <ListView 
+                     HasUnevenRows="True"
+                    SeparatorColor="Crimson"
+                    >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="Hallo" Style="{StaticResource Labels}"/>
+                                    <Label  Text="Moin" Style="{StaticResource Labels}" Grid.Column="1"/>
+                                    <Label  Text="dsj" Style="{StaticResource Labels}" Grid.Column="2"/>
+                                    <Button Text="DELETE" Grid.Column="3"/>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>

@@ -34,7 +34,7 @@ namespace SaveUp.ViewModel
 
         public string Budge
         {
-            get { return $"Gesparte Summe beträgt: {budge} CHF"; }
+            get { return $"Gesparte Summe bfeträgt: {budge} CHF"; }
 
 
 
