@@ -13,10 +13,16 @@ namespace SaveUp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddPageViewxaml : ContentPage
     {
+        public AddPageViewxaml(AddPageViewModel apvm)
+        {
+            InitializeComponent();
+            BindingContext =  apvm;
+        }
         public AddPageViewxaml()
         {
             InitializeComponent();
             BindingContext = new AddPageViewModel();
         }
+      
     }
 }

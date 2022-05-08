@@ -21,15 +21,20 @@ namespace SaveUp
      
 
         }
+        public MainPage(MainPageViewModel mpvm)
+        {
+            BindingContext = mpvm;
+            InitializeComponent();
+        }
 
 
 
-      
-       
 
 
 
-   
+
+
+
     }
 
 

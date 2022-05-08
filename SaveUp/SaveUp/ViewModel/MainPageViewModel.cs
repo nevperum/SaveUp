@@ -2,6 +2,7 @@
 using SaveUp.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -30,7 +31,7 @@ namespace SaveUp.ViewModel
             }
 
         }
-
+        // Konstruktor
         public MainPageViewModel()
         {
             // öffnet Command show list
@@ -44,12 +45,16 @@ namespace SaveUp.ViewModel
         public Command ShowListCommand { get; }
         public Command AddListCommand { get; }
 
-       
+         public ObservableCollection<DatSpar> data = new ObservableCollection<DatSpar>();
+        public ObservableCollection<DatSpar> Data { get { return data; } set { data = value; OnPropertyChanged(); } }
 
-        double budge = 1010000000;
+
+        // Betrag gespart
+        double budge;
 
         // Für veränderung von objekten während dem Benützen
 
+        // für änderungen wärend des benützen
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string name = "")
@@ -77,7 +82,7 @@ namespace SaveUp.ViewModel
         // öffnet die Seite AddPage
         async void AddList()
         {
-            //   ShowPageViewModel spvm = new ShowPageViewModel();
+            //  ShowPageViewModel spvm = new AddPageViewModel();
 
             await Application.Current.MainPage.Navigation.PushAsync(new AddPageViewxaml());
 

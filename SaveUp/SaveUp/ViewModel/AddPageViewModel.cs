@@ -46,8 +46,8 @@ namespace SaveUp.ViewModel
         void Commit()
         {
             data.Add(datSpar);
-            MainPageViewModel mvm = new MainPageViewModel(data);
-            App.Current.MainPage = new NavigationPage(new MainPage());
+            MainPageViewModel mpvm = new MainPageViewModel(data);
+            App.Current.MainPage = new NavigationPage(new MainPage(mpvm));
 
         }
     }
