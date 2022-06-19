@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SaveUp.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,12 @@ namespace SaveUp.View
     {
         public ShowPageView()
         {
+            InitializeComponent();
+            BindingContext = new ShowPageViewModel();
+        }
+        public ShowPageView(ShowPageViewModel spvm)
+        {
+            BindingContext = spvm;
             InitializeComponent();
         }
     }

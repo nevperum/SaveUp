@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using static SaveUp.Model.ArtikelModel;
 
 namespace SaveUp.ViewModel
 {
@@ -30,6 +30,8 @@ namespace SaveUp.ViewModel
 
             }
 
+            this.Data = data;
+
         }
         // Konstruktor
         public MainPageViewModel()
@@ -45,7 +47,7 @@ namespace SaveUp.ViewModel
         public Command ShowListCommand { get; }
         public Command AddListCommand { get; }
 
-         public ObservableCollection<DatSpar> data = new ObservableCollection<DatSpar>();
+         private ObservableCollection<DatSpar> data = new ObservableCollection<DatSpar>();
         public ObservableCollection<DatSpar> Data { get { return data; } set { data = value; OnPropertyChanged(); } }
 
 
@@ -74,15 +76,15 @@ namespace SaveUp.ViewModel
         // öffnet die Seite ShowPage
         async void ShowList()
         {
-            //   ShowPageViewModel spvm = new ShowPageViewModel();
+               ShowPageViewModel spvm = new ShowPageViewModel(data);
 
-            await Application.Current.MainPage.Navigation.PushAsync(new ShowPageView());
+            await Application.Current.MainPage.Navigation.PushAsync(new ShowPageView(spvm));
 
         }
         // öffnet die Seite AddPage
         async void AddList()
         {
-            //  ShowPageViewModel spvm = new AddPageViewModel();
+            AddPageViewModel apvm = new AddPageViewModel();
 
             await Application.Current.MainPage.Navigation.PushAsync(new AddPageViewxaml());
 

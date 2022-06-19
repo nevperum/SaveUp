@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodel="clr-namespace:SaveUp.ViewModel" x:DataType="viewmodel:ShowPageViewModel"
              x:Class="SaveUp.View.ShowPageView">
     <ContentPage.Content>
         <StackLayout>
@@ -9,9 +9,10 @@
                     <Label Text="Hier können Sie alle gesparten Artikel sehen" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
                 </Frame>
             </StackLayout>
-           
+            <StackLayout>
+                
                 <ListView 
-                    ItemsSource="{Binding EintragDaten}"
+                      ItemsSource="{Binding Data}"
                      HasUnevenRows="True"
                     SeparatorColor="Crimson">
                     <ListView.ItemTemplate>
@@ -23,20 +24,23 @@
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="Hallo" Style="{StaticResource Labels}"/>
-                                    <Label  Text="Moin" Style="{StaticResource Labels}" Grid.Column="1"/>
-                                    <Label  Text="dsj" Style="{StaticResource Labels}" Grid.Column="2"/>
-                                    <Button Text="DELETE" Grid.Column="3"/>
+                                    <Label  Text="{Binding Data}" 
+                                 
+                                    HorizontalOptions="Start"
+                                    Margin="10"/>
 
-                                </Grid>
+                                <Label  Text="{Binding Data.Count}" 
+                                  
+                                    Grid.Column="1"/>
+                            
+
+                            </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Text="Alle löschen!" Style="{StaticResource Buttons}"
-                Grid.Row="2"
-                BackgroundColor="Red"
-                Command="{Binding DeleteAll}"/>
+            </StackLayout>
+            
           
         </StackLayout>
         

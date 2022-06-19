@@ -15,14 +15,20 @@ namespace SaveUp.View
     {
         public AddPageViewxaml(AddPageViewModel apvm)
         {
+            BindingContext = apvm;
             InitializeComponent();
-            BindingContext =  apvm;
+         
         }
         public AddPageViewxaml()
         {
-            InitializeComponent();
             BindingContext = new AddPageViewModel();
+            InitializeComponent();
+
         }
-      
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,20 +7,18 @@ using System.Runtime.CompilerServices;
 using System.Text;
 
 using Xamarin.Forms;
+using static SaveUp.Model.ArtikelModel;
 
 namespace SaveUp.ViewModel
 
 
 {
 
-    public class DatSpar
-    {
-        public double preis { get; set; }
-        public string datum { get; set; }
-        public string name { get; set; }
-    }
+  
     public class AddPageViewModel : INotifyPropertyChanged
     {
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged([CallerMemberName] string name = "")
@@ -28,11 +26,11 @@ namespace SaveUp.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        DatSpar datSpar = new DatSpar();
+        public DatSpar datSpar = new DatSpar();
         public double Preis { get { return datSpar.preis; } set { datSpar.preis = value; OnPropertyChanged(nameof(Preis)); } }
         public string Name { get { return datSpar.name; } set { datSpar.name = value; OnPropertyChanged(nameof(Name)); } }
         public string Datum { get { return datSpar.datum; } set { datSpar.datum = value; OnPropertyChanged(); } }
-        public ObservableCollection<DatSpar> data = new ObservableCollection<DatSpar>();
+        private ObservableCollection<DatSpar> data = new ObservableCollection<DatSpar>();
         public ObservableCollection<DatSpar> Data { get { return data; } set { data = value; OnPropertyChanged(); } }
 
         public Command CommitCommand { get; }
@@ -43,7 +41,7 @@ namespace SaveUp.ViewModel
 
         }
 
-        void Commit()
+        public void Commit()
         {
             data.Add(datSpar);
             MainPageViewModel mpvm = new MainPageViewModel(data);
